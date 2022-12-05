@@ -1,0 +1,101 @@
+.layer-control {
+  font-family: siyuan;
+}
+.layer-control-retract {
+  width: 210px;
+  height: 90px;
+  background-image: url('./image/small.png');
+  padding-top: 26px;
+  font-size: 22px;
+  font-weight: bold;
+}
+.layer-control-retract-icon {
+  margin-left: 30px;
+  cursor: pointer;
+}
+.layer-control-open {
+  width: 540px;
+  height: 560px;
+  padding: 26px 30px;
+  font-size: 22px;
+  font-weight: bold;
+  background-image: url('./image/big.png');
+}
+.layer-control-open-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.layer-control-open-top:first-child {
+  margin-left: 6px;
+}
+.layer-control-open-icon {
+  cursor: pointer;
+}
+.layer-control-open-content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 26px;
+}
+.layer-control-open-content-left {
+  width: 250px;
+  font-size: 32px;
+  font-weight: bold;
+}
+.layer-control-open-content-right {
+  max-height: 408px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.layer-control-open-content-left-row {
+  text-align: left;
+  margin-bottom: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  line-height: 78px;
+}
+.layer-control-open-content-left-row text {
+  margin-left: 20px;
+}
+.layer-control-open-content-left-row-active {
+  background-image: url('./image/active.png');
+}
+.layer-control-open-content-left-row-active text {
+  background: linear-gradient(#ffffff, #3cf0e1);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+.layer-control-open-content-right-date {
+  display: flex;
+  width: 204px;
+  font-size: 24px;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.layer-control-open-content-right-date-row {
+  cursor: pointer;
+}
+.layer-control-open-content-right-date-row-active {
+  background: linear-gradient(#a0ff8c, #3cf0e1);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+.layer-control-open-content-right-secondary {
+  text-align: left;
+  font-size: 20px;
+}
+.layer-control-open-content-right-secondary-row {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 22px 0;
+}
+.layer-control-open-content-right-secondary-row text {
+  margin-left: 22px;
+}
+.layer-control-open-content-right-secondary-row-active text {
+  background: linear-gradient(#ffffff, #3cf0e1);
+  color: transparent;
+  -webkit-background-clip: text;
+}
