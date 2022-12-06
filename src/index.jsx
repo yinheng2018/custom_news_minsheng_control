@@ -5,7 +5,7 @@ import list from './dataConfig'
 import images from './imgConfig'
 import './index.css'
 
-function CustomLayerControl({
+function customNewsMingshengControl({
   bigScreen: { setDataPool },
   editable,
   events: { click },
@@ -438,6 +438,6 @@ function CustomLayerControl({
     </div>
   )
 }
-CustomLayerControl.setting = setting
+customNewsMingshengControl.setting = setting
 
-export default CustomLayerControl
+export default customNewsMingshengControl
