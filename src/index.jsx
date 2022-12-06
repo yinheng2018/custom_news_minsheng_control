@@ -14,21 +14,12 @@ function customNewsMingshengControl({
   const [open, setOpen] = useState(true)
   const [mogami, setMogami] = useState('SmartCommunity')
   const [Pname, setPname] = useState('智慧社区')
-  const [date, setDate] = useState('day')
   const [check, setCheck] = useState('radio')
-  const [secondaryRadio, setSecondaryRadio] = useState(
-    'earlyWarningScatteredPoints'
-  )
+
   const [secondaryList, setSecondaryList] = useState([])
   const [secondaryCheck, setSecondaryCheck] = useState([])
-  const [dateList, setDateList] = useState([])
   const [isCheckedList, setIsCheckedList] = useState([])
 
-  const [SmartCommunity, setSmartCommunity] = useState([])
-  const [GovernmentServices, setGovernmentServices] = useState([])
-  const [WisdomEducation, setWisdomEducation] = useState([])
-  const [IntelligentHealth, setIntelligentHealth] = useState([])
-  const [SmartElderlyCare, setSmartElderlyCare] = useState([])
   // 智慧社区
   const [housing, setHousing] = useState([]) //公租房小区
   const [Dishonestperson, setDishonestperson] = useState([]) //失信人员
@@ -56,14 +47,26 @@ function customNewsMingshengControl({
       click,
       {
         mogami,
-        date,
-        SmartCommunity,
-        GovernmentServices,
-        WisdomEducation,
-        IntelligentHealth,
-        SmartElderlyCare,
-        // keySites: secondaryCheck,
-        // SmartCommunity: secondaryRadio,
+        //  智慧社区
+        housing,  //公租房小区
+        Dishonestperson, //失信人员
+        // 政务服务
+        Regional, //区域办件量
+        TopTasks,//热门办件事项
+        // 智慧教育
+        resources,  //教育资源分布
+        institution,//科研机构
+        Hightech, //高新技术企业
+        // 智慧卫生
+        Distribution, //医疗资源分布
+        Publichospital, //公立医院
+        Privatehospital, //私立医院
+        Primaryhealth, //基层卫生医疗机构
+        // 智慧养老
+        Distributionendowment, //养老资源分布
+        Publicnursinghomes, //公立养老院
+        Privatenursinghome,  //私立养老院
+        Cateringsite,//助餐站点
         visible: String(open)
       },
       path,
@@ -79,7 +82,7 @@ function customNewsMingshengControl({
   // 值改变更新dataPool
   useEffect(() => {
     setDataPl()
-  }, [mogami, date, secondaryRadio, secondaryCheck, open])
+  }, [mogami, secondaryCheck, open])
 
   // 点击展开
   const handleOpen = () => {
@@ -87,8 +90,6 @@ function customNewsMingshengControl({
     setCheck('radio')
     setMogami('SmartCommunity')
     setPname('智慧社区')
-    // setDate('day');
-    setSecondaryRadio('earlyWarningScatteredPoints')
   }
 
   // 点击关闭
@@ -96,15 +97,12 @@ function customNewsMingshengControl({
     setOpen(false)
     setMogami('')
     setPname('')
-    setDate('')
-    setSecondaryRadio('')
     setSecondaryCheck([])
   }
 
   // 点击选中最上级
   const handleCheckMogami = (v, i) => {
     if (v.value !== mogami) {
-      setSecondaryRadio('')
       setSecondaryCheck([])
     }
     clearPrevDataInfo(Pname);
@@ -121,17 +119,7 @@ function customNewsMingshengControl({
     console.log('Pname', Pname)
 
   }
-  //筛选选中数据
-  const filterIsChecketValue = (i) => {
-    const List = []
-    list[i].children.map((item) => {
-      if (item.isChecked) {
-        List.push(item.value)
-      }
-    })
-    console.log('选中的数据', List)
-    return List
-  }
+
   // 获取次级列表
   const getSecondaryList = () => {
     list.forEach((v) => {
@@ -140,46 +128,29 @@ function customNewsMingshengControl({
         const dateData = v.dateList || []
         console.log(listData)
         setSecondaryList(listData)
-        // setDateList(dateData);
       }
     })
   }
 
-  // 点击时间周期
-  const handleDate = (v) => {
-    setDate(v)
-  }
+
 
   // 点击次级
   const clickSecondary = (v) => {
-    // console.log("v",v)
-    // if (check === 'radio') {
-    setSecondaryRadio(v.value)
+
     v.isChecked = !v.isChecked
     if (isCheckedList.includes(v.value) && !v.isChecked) {
       const List = isCheckedList.filter((items) => items != v.value)
-      // console.log("List1",List)
+
       setIsCheckedList(List)
     } else {
       isCheckedList.push(v.value)
       const List = isCheckedList
-      // console.log("List2",List)
+
       setIsCheckedList(List)
     }
       
      setChildernList(Pname)
-    // }
-
-    // else {
-    //   const listData = [...secondaryCheck]
-    //   if (listData.includes(v)) {
-    //     const index = listData.findIndex((item) => item === v)
-    //     listData.splice(index, 1)
-    //     setSecondaryCheck([...listData])
-    //     return
-    //   }
-    //   setSecondaryCheck([...listData, v])
-    // }
+    
   }
   //清空上一步撒点类别信息
   const clearPrevDataInfo=(oldPname) => {

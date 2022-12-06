@@ -33,11 +33,6 @@ export default {
           description: '最上级变量',
           value: '',
         },
-        // SmartCommunity: {
-        //   mapper: '',
-        //   description: '智慧社区',
-        //   value: '',
-        // },
         housing: {
           mapper: '',
           description: '公租房小区',
@@ -48,11 +43,6 @@ export default {
           description: '失信人员',
           value: '',
         },
-        // GovernmentServices: {
-        //   mapper: '',
-        //   description: '政务服务',
-        //   value: '',
-        // },
         Regional: {
           mapper: '',
           description: '区域办件量',
@@ -63,11 +53,6 @@ export default {
           description: '热门办件事项',
           value: '',
         },
-        // WisdomEducation: {
-        //   mapper: '',
-        //   description: '智慧教育',
-        //   value: '',
-        // },
         resources: {
           mapper: '',
           description: '教育资源分布',
@@ -83,11 +68,6 @@ export default {
           description: '高新技术企业',
           value: '',
         },
-        // IntelligentHealth: {
-        //   mapper: '',
-        //   description: '智慧卫生',
-        //   value: '',
-        // },
         Distribution: {
           mapper: '',
           description: '医疗资源分布',
@@ -108,11 +88,6 @@ export default {
           description: '基层卫生医疗机构',
           value: '',
         },
-        // SmartElderlyCare: {
-        //   mapper: '',
-        //   description: '智慧养老',
-        //   value: '',
-        // },
         Distributionendowment: {
           mapper: '',
           description: '养老资源分布',
@@ -132,8 +107,7 @@ export default {
           mapper: '',
           description: '助餐站点',
           value: '',
-        },
-       
+        }
       },
     },
   },
